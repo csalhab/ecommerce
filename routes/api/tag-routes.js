@@ -33,8 +33,18 @@ router.post("/", async (req, res) => {
   res.status(200).json(newTag);
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", async (req, res) => {
   // update a tag's name by its `id` value
+  const updateTagData = await Tag.update(req.body, {
+    where: { id: req.params.id },
+  }).catch((err) => res.status(500).json(err));
+  if (!updateTagData[0]) {
+    return res.status(404).json({
+      error_message: `No update done since the Tag ID ${req.params.id} doesn't exist. Please double check your Tag ID.`,
+    });
+  }
+  //res.status(200).json(updateCategoryData); //shows JSON success info
+  res.status(200).json({ message: "Your tag was updated successfuly." });
 });
 
 router.delete("/:id", (req, res) => {
