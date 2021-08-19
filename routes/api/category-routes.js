@@ -47,8 +47,19 @@ router.put("/:id", async (req, res) => {
   res.status(200).json({ message: "Your category was updated successfuly." });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
   // delete a category by its `id` value
+  const deletedCategory = await Category.destroy({
+    where: { id: req.params.id },
+  });
+  if (!deletedCategory) {
+    return res.status(404).json({
+      error_message: `Cannot be deleted because the category with ID ${req.params.id} does not exist.`,
+    });
+  }
+  res
+    .status(200)
+    .json({ message: "The category has successfully been deleted." });
 });
 
 module.exports = router;
