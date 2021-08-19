@@ -25,12 +25,26 @@ router.get("/:id", async (req, res) => {
   res.status(200).json(categoryIdData);
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   // create a new category
+  const newCategory = await Category.create(req.body).catch((err) =>
+    res.status(500).json(err.message)
+  );
+  res.status(200).json(newCategory);
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", async (req, res) => {
   // update a category by its `id` value
+  const updateCategoryData = await Category.update(req.body, {
+    where: { id: req.params.id },
+  }).catch((err) => res.status(500).json(err));
+  if (!updateCategoryData[0]) {
+    return res.status(404).json({
+      error_message: `No update done since category ID ${req.params.id} doesn't exist. Please double check your category ID.`,
+    });
+  }
+  //res.status(200).json(updateCategoryData); //shows JSON success info
+  res.status(200).json({ message: "Your category was updated successfuly." });
 });
 
 router.delete("/:id", (req, res) => {
