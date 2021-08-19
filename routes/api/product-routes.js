@@ -19,11 +19,9 @@ router.get("/:id", async (req, res) => {
     include: [{ model: Category }, { model: Tag }],
   }).catch((err) => res.status(500).json(err));
   if (!productIdData)
-    return res
-      .status(404)
-      .json({
-        error_message: `There is no product by the ID of ${req.params.id}`,
-      });
+    return res.status(404).json({
+      error_message: `There is no product by the ID of ${req.params.id}`,
+    });
   res.status(200).json(productIdData);
 });
 
@@ -108,8 +106,7 @@ router.delete("/:id", async (req, res) => {
   });
   if (!deletedProduct) {
     return res.status(404).json({
-      error_message:
-        "Product cannot be deleted because the product does not exist.",
+      error_message: `Product ID ${req.params.id} cannot be deleted because a product with that id does not exist.`,
     });
   }
   res
