@@ -2,15 +2,29 @@
 
 ## Description
 
-Before calling out details about this E-Commerce Back End, you may find my helpful video walk-thrus here:
+Before calling out details about this E-Commerce Back End, you may find my helpful video walk-thrus here on these links:
 
-[>>>>> Please click here for Walk-Thru #1: <<<<<](https://linkComing.com)
+[>>>>> Please click here for Walk-Thru #1: STEP 1 - Database SCHEMA <<<<<](https://drive.google.com/file/d/1oYMWA3StoLKtNVU8BdAaJbF49UYpSh-W/view)
 
-[>>>>> Please click here for walk thru #2 <<<<<](https://linkComing.com)
+[>>>>> Please click here for walk thru #2: Step 2 - SEED the db <<<<<](https://drive.google.com/file/d/1YGag7HBemSLahRZaFO9DQb63IcUY39GG/view)
 
-[>>>>> Please click here for walk thru #3 <<<<<](https://linkComing.com)
+[>>>>> Please click here for walk thru #3: STEP 3 - FINAL CHECKS: (PORT, ROUTES/ENDPOINTS, NPM INSTALL & DOTENV MODULE) <<<<<](https://drive.google.com/file/d/1FS9cbP7AueL0crbfQmts7ZMC6X_74Sqh/view)
 
-[>>>>> Please click here for walk thru #4 <<<<<](https://linkComing.com)
+[>>>>> Please click here for walk thru #4: STEP 4 - START THE APP/LISTEN ON PORT 3001 <<<<<](https://drive.google.com/file/d/178h9PfyKCDalN-IYfWNxFm60b0I2sm5J/view)
+
+[>>>>> Please click here for walk thru #3: STEP 5 - TEST ALL THE GET's (Categories, Tags & Products ROUTES) <<<<<](https://drive.google.com/file/d/1J72jHu4H6-GNj2QntaRVcX99LD4L7Sv9/view)
+
+[>>>>> Please click here for walk thru #4: STEP 6 - TEST THE POST's (Categories & Products ROUTES) <<<<<](https://drive.google.com/file/d/1W1DlkznJYqv0tA313YXlNkyLVYIueAVu/view)
+
+[>>>>> Please click here for walk thru #3: STEP 7 - TEST THE POST's (Tags ROUTE) <<<<<](https://drive.google.com/file/d/1rdSx2liK26pi_4Rec8VoB8x5KhhCZiHT/view)
+
+[>>>>> Please click here for walk thru #3: STEP 8 - TEST THE PUT's (Categories ROUTES) <<<<<](https://drive.google.com/file/d/1t4T_6kYH4LPaBWEsLnAbtSD3hDWrKQpe/view)
+
+[>>>>> Please click here for walk thru #4: STEP 9 - TEST THE PUT's (Products ROUTES) <<<<<](https://drive.google.com/file/d/1OQCBJyr8KGVau3rCXNxP9iQl3IXcGB0t/view)
+
+[>>>>> Please click here for walk thru #3: STEP 10 - TEST THE PUT's (Tags ROUTES) <<<<<](https://drive.google.com/file/d/1iaDjPB3FbiO80lPUEnV-hef7hD8Adn0G/view)
+
+[>>>>> Please click here for walk thru #4: STEP 11 - TEST ALL THE DELETE's (Categories, Products & Tags ROUTES) <<<<<](https://drive.google.com/file/d/1YkNFyJgd1har-YS6y_hqtKpHXVQJU2sE/view)
 
 -This homework/app is only back end.
 
@@ -28,7 +42,18 @@ Before calling out details about this E-Commerce Back End, you may find my helpf
 
 -From this homework, I see how helpful using Sequelize is as issuing queries for SELECT, INSERT, WHERE, JOINs, etc.. are a lot less complicated. Lastly, it really kept me out of MySQL's Workbench and allowed me to just test in POSTMAN and JSON structure.
 
-## Your Task
+## Table of Contents on Homework5
+
+- [Description](#description)
+- [Task](#task)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Mock Up](#mock-up)
+- [Getting Started](#getting-started)
+- [Grading Requirements](#grading-requirements)
+- [Review](#review)
+
+## Task
 
 Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
 
