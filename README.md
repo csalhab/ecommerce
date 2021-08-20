@@ -1,5 +1,33 @@
 # 13 Object-Relational Mapping (ORM): E-Commerce Back End
 
+## Description
+
+Before calling out details about this E-Commerce Back End, you may find my helpful video walk-thrus here:
+
+[>>>>> Please click here for Walk-Thru #1: <<<<<](https://linkComing.com)
+
+[>>>>> Please click here for walk thru #2 <<<<<](https://linkComing.com)
+
+[>>>>> Please click here for walk thru #3 <<<<<](https://linkComing.com)
+
+[>>>>> Please click here for walk thru #4 <<<<<](https://linkComing.com)
+
+-This homework/app is only back end.
+
+-To test, please use an API interfacing client of your choice, such as POSTMAN or Insomnia Core. Here you may issue GET, POST, PUT and DELETE, RESTful CRUD commands.
+
+-It leverages an Express.js server and Sequelize (which is backed by MySQL2 module) which dynamically iteracts with a local MySQL database.
+
+-The local database was created using schema and then dynamically seeded using Node with several seed sql files. Please note that both schema and the seed files are all included in this repo. The schema may be found inside the folder named db. And the 4 individual seed files may be found in the seeds folder. Plase note that there is an index.js inside of the seeds folder, which will allow you to seed all 4 files at once by just issuing this terminal command: node seeds/index.js.
+
+-DOTENV module was used here too preventing from exposing my MySQL's username and super secret password.
+
+-Async/await was used, reducing unnecesary extra .then's and code.
+
+-Models were also used. Besides facilitating defining a database's tables and columns, setting up foreign keys was straightforward. Importantly, it allowed for establishing relationships between the multiple tables very easily via several of Sequelize methods. And some of these methods, such as belongsTo(), helped in understand where the foreign key needed to be set.
+
+-From this homework, I see how helpful using Sequelize is as issuing queries for SELECT, INSERT, WHERE, JOINs, etc.. are a lot less complicated. Lastly, it really kept me out of MySQL's Workbench and allowed me to just test in POSTMAN and JSON structure.
+
 ## Your Task
 
 Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
@@ -58,113 +86,113 @@ Use the `schema.sql` file in the `db` folder to create your database with MySQL 
 
 Your database should contain the following four models, including the requirements listed for each model:
 
-* `Category`
+- `Category`
 
-  * `id`
+  - `id`
 
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+    - Integer.
 
-  * `category_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
+    - Doesn't allow null values.
 
-* `Product`
+    - Set as primary key.
 
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+    - Uses auto increment.
 
-  * `product_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
+  - `category_name`
 
-  * `price`
-  
-    * Decimal.
-  
-    * Doesn't allow null values.
-  
-    * Validates that the value is a decimal.
+    - String.
 
-  * `stock`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set a default value of `10`.
-  
-    * Validates that the value is numeric.
+    - Doesn't allow null values.
 
-  * `category_id`
-  
-    * Integer.
-  
-    * References the `Category` model's `id`.
+- `Product`
 
-* `Tag`
+  - `id`
 
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+    - Integer.
 
-  * `tag_name`
-  
-    * String.
+    - Doesn't allow null values.
 
-* `ProductTag`
+    - Set as primary key.
 
-  * `id`
+    - Uses auto increment.
 
-    * Integer.
+  - `product_name`
 
-    * Doesn't allow null values.
+    - String.
 
-    * Set as primary key.
+    - Doesn't allow null values.
 
-    * Uses auto increment.
+  - `price`
 
-  * `product_id`
+    - Decimal.
 
-    * Integer.
+    - Doesn't allow null values.
 
-    * References the `Product` model's `id`.
+    - Validates that the value is a decimal.
 
-  * `tag_id`
+  - `stock`
 
-    * Integer.
+    - Integer.
 
-    * References the `Tag` model's `id`.
+    - Doesn't allow null values.
+
+    - Set a default value of `10`.
+
+    - Validates that the value is numeric.
+
+  - `category_id`
+
+    - Integer.
+
+    - References the `Category` model's `id`.
+
+- `Tag`
+
+  - `id`
+
+    - Integer.
+
+    - Doesn't allow null values.
+
+    - Set as primary key.
+
+    - Uses auto increment.
+
+  - `tag_name`
+
+    - String.
+
+- `ProductTag`
+
+  - `id`
+
+    - Integer.
+
+    - Doesn't allow null values.
+
+    - Set as primary key.
+
+    - Uses auto increment.
+
+  - `product_id`
+
+    - Integer.
+
+    - References the `Product` model's `id`.
+
+  - `tag_id`
+
+    - Integer.
+
+    - References the `Tag` model's `id`.
 
 ### Associations
 
 You'll need to execute association methods on your Sequelize models to create the following relationships between them:
 
-* `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
+- `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
 
-* `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
+- `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
 
 > **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models.
 
@@ -186,63 +214,64 @@ Create the code needed in `server.js` to sync the Sequelize models to the MySQL 
 
 ## Grading Requirements
 
-This homework is graded based on the following criteria: 
+This homework is graded based on the following criteria:
 
 ### Deliverables: 10%
 
-* The GitHub repository containing your application code.
+- The GitHub repository containing your application code.
 
 ### Walkthrough Video: 37%
 
-* A walkthrough video that demonstrates the functionality of the e-commerce back end must be submitted, and a link to the video should be included in your readme file.
+- A walkthrough video that demonstrates the functionality of the e-commerce back end must be submitted, and a link to the video should be included in your readme file.
 
-* The walkthrough video must show all of the technical acceptance criteria being met.
+- The walkthrough video must show all of the technical acceptance criteria being met.
 
-* The walkthrough video must demonstrate how to create the schema from the MySQL shell.
+- The walkthrough video must demonstrate how to create the schema from the MySQL shell.
 
-* The walkthrough video must demonstrate how to seed the database from the command line.
+- The walkthrough video must demonstrate how to seed the database from the command line.
 
-* The walkthrough video must demonstrate how to start the application’s server.
+- The walkthrough video must demonstrate how to start the application’s server.
 
-* The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia Core.
+- The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia Core.
 
-* The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia Core.
+- The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia Core.
 
-* The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core.
+- The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core.
 
 ### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+- Satisfies all of the preceding acceptance criteria plus the following:
 
-  * Connects to a MySQL database using the [MySQL2](https://www.npmjs.com/package/mysql) and [Sequelize](https://www.npmjs.com/package/sequelize) packages.
+  - Connects to a MySQL database using the [MySQL2](https://www.npmjs.com/package/mysql) and [Sequelize](https://www.npmjs.com/package/sequelize) packages.
 
-  * Stores sensitive data, like a user’s MySQL username, password, and database name, using environment variables through the [dotenv](https://www.npmjs.com/package/dotenv) package.
+  - Stores sensitive data, like a user’s MySQL username, password, and database name, using environment variables through the [dotenv](https://www.npmjs.com/package/dotenv) package.
 
-  * Syncs Sequelize models to a MySQL database on the server start.
+  - Syncs Sequelize models to a MySQL database on the server start.
 
-  * Includes column definitions for all four models outlined in the homework instructions.
+  - Includes column definitions for all four models outlined in the homework instructions.
 
-  * Includes model associations outlined in the homework instructions.
+  - Includes model associations outlined in the homework instructions.
 
 ### Repository Quality: 13%
 
-* Repository has a unique name.
+- Repository has a unique name.
 
-* Repository follows best practices for file structure and naming conventions.
+- Repository follows best practices for file structure and naming conventions.
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 
-* Repository contains multiple descriptive commit messages.
+- Repository contains multiple descriptive commit messages.
 
-* Repository contains quality readme with description and a link to a walkthrough video.
+- Repository contains quality readme with description and a link to a walkthrough video.
 
 ## Review
 
 You are required to submit BOTH of the following for review:
 
-* A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
+- A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
+- The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
 
 ---
+
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
